@@ -1,0 +1,72 @@
+# Voting Smart Contract
+
+## Overview
+
+This is a simple Ethereum smart contract written in Solidity for conducting a voting process with multiple proposals. The contract allows a chairman to deploy the contract, define proposal names, grant voting rights, and collect votes. The winning proposal and its name can be determined through the contract functions.
+
+## Smart Contract Details
+
+### 1. Proposal Struct
+
+- Represents a proposal with a name and vote count.
+
+### 2. Voter Struct
+
+- Represents a voter with a vote choice, voting status, and weight.
+
+### 3. Constructor
+
+- Initializes the contract with a list of proposal names provided during deployment.
+- Sets the chairman to the address that deploys the contract.
+- Grants a weight of 1 to the chairman.
+
+### 4. RightToVote Function
+
+- Allows the chairman to grant voting rights to a specific address.
+
+### 5. Vote Function
+
+- Enables voters to cast their votes for a specific proposal.
+- Checks if the voter has the right to vote and hasn't voted already.
+- Updates the vote count for the chosen proposal.
+
+### 6. WinningProposals Function
+
+- Determines the index of the winning proposal based on the highest vote count.
+
+### 7. WinningName Function
+
+- Retrieves the name of the winning proposal using the index obtained from WinningProposals.
+
+## Getting Started
+
+1. Clone the repository:
+
+    ```bash
+    git clone <repository_url>
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd <project_directory>
+    ```
+
+3. Install the necessary dependencies (if any).
+
+4. Deploy the smart contract using a Solidity-compatible development environment like Remix or Truffle.
+
+## Usage
+
+1. Deploy the contract and provide a list of proposal names.
+2. Grant voting rights using the `RightToVote` function for eligible addresses.
+3. Voters can cast their votes using the `vote` function.
+4. Use the `winningProposals` and `winningName` functions to determine the winning proposal and its name.
+
+## Contributing
+
+Feel free to contribute to the project by opening issues or submitting pull requests. Follow the contribution guidelines specified in the repository.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
